@@ -5,9 +5,9 @@ services:
     ports:
       - "5432:5432"
     environment:
-      POSTGRES_USER: ${DB_USER}
-      POSTGRES_PASSWORD: ${DB_PASS}
+      POSTGRES_USER: ${DB_PG_USER}
+      POSTGRES_PASSWORD: ${DB_PG_PASS}
     volumes:
       - type: bind
-        source: ${DB_DATA}
+        source: ${DB_PG_DATA}
         target: /var/lib/postgresql/data
