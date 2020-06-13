@@ -1,0 +1,13 @@
+version: "3.2"
+services:
+  my-postgres:
+    image: postgres
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASS}
+    volumes:
+      - type: bind
+        source: ${DB_DATA}
+        target: /var/lib/postgresql/data
